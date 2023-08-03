@@ -1,0 +1,7 @@
+To create container 
+-----------------------------
+  docker-compose -f .\docker-compose.yaml up
+
+To remove container ( This deletes image as well)
+-------------------------------------------------------
+ docker-compose -f .\docker-compose.yaml down --rmi all
