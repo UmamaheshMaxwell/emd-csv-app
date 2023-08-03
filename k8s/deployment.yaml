@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emd-csv-app
+spec:
+  selector:
+    matchLabels:
+      app: emd-csv-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: emd-csv-app
+    spec:
+      containers:
+        - name: emd-csv-app
+          image: gcr.io/gcp-training-386807/emd-csv-service
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emd-csv-service
+spec:
+  selector:
+    app: emd-csv-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
