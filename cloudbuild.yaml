@@ -23,7 +23,9 @@ substitutions:
   _REGION: us-central1 # The region where the cloud services are located.
   _SERVICE_NAME: emd-csv-service # The name of the App Cloud Run service (Any name you choose).
 
-
 # The structure of the built image
 images:
   - gcr.io/${PROJECT_ID}/${_SERVICE_NAME}
+
+
+  
