@@ -1,12 +1,19 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: emd-csv-pod
+  name: emd-csv-deploy
 spec:
+  selector:
+    matchLabels:
+      app: emd-csv-app
+  replicas: 1
   restartPolicy: Never
-  containers:
-    - name: emd-csv-app
-      image: gcr.io/gcp-training-386807/emd-csv-service
-
-
+  template:
+    metadata:
+      labels:
+        app: emd-csv-app
+    spec:
+      containers:
+        - name: emd-csv-app
+          image: gcr.io/gcp-training-386807/emd-csv-service
 
