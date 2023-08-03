@@ -3,6 +3,10 @@ kind: Pod
 metadata:
   name: emd-csv-pod
 spec:
+  restartPolicy: Never
   containers:
     - name: emd-csv-app
       image: gcr.io/gcp-training-386807/emd-csv-service
+
+
+
