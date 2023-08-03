@@ -1,16 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: emd-csv-deploy
+  name: emd-csv-job
 spec:
-  selector:
-    matchLabels:
-      app: emd-csv-app
-  replicas: 1
+  completions: 1
   template:
     metadata:
-      labels:
-        app: emd-csv-app
+      name: emd-csv-pod
     spec:
       restartPolicy: Never
       containers:
