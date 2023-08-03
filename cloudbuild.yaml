@@ -15,7 +15,7 @@ steps:
     - run 
     - --filename=k8s/deployment.yaml
     - --image=gcr.io/${PROJECT_ID}/${_SERVICE_NAME}:${COMMIT_SHA} 
-    - --location=us-central1-a
+    - --location=us-central1-c
     - --cluster=k8s-cluster
 
 # Here are the substitution variables related to the services.
